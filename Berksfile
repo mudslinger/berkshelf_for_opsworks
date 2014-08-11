@@ -1,2 +1,3 @@
-cookbook 'td-agent' #, git: 'https://github.com/treasure-data/chef-td-agent.git'
-cookbook 'nginx'
+site :opscode
+
+cookbook 'td-agent', git: 'https://github.com/treasure-data/chef-td-agent.git'
