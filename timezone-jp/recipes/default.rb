@@ -1,3 +1,3 @@
-link "/usr/share/zoneinfo/Asia/Tokyo" do
-	to "/etc/localtime"
+link "/etc/localtime" do
+	to "/usr/share/zoneinfo/Asia/Tokyo"
 end
