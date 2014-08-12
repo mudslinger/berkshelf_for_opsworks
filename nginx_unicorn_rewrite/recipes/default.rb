@@ -12,3 +12,4 @@ file '/etc/nginx/sites-available/miniapps' do
 	#11.12 content _file.send(:editor).lines.join
 	content _file.send(:contents).join
 end
+
