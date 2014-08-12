@@ -13,3 +13,5 @@ file '/etc/nginx/sites-available/miniapps' do
 	content _file.send(:contents).join
 end
 
+#test
+#test
