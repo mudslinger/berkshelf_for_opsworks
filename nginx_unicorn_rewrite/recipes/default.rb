@@ -23,7 +23,7 @@ file '/etc/nginx/sites-available/miniapps' do
 EOS
 	)
 	content _file.send(:contents).join
-end
+end if !File.exists?('/etc/nginx/sites-available/miniapps')
 
 file '/etc/nginx/sites-available/yamaokaya' do
 	_file = Chef::Util::FileEdit.new(path)
@@ -42,4 +42,4 @@ file '/etc/nginx/sites-available/yamaokaya' do
 EOS
 	)
 	content _file.send(:contents).join
-end
+end if !File.exists?('/etc/nginx/sites-available/yamaokaya')
