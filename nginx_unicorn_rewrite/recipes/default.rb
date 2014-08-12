@@ -8,10 +8,23 @@
 
 file '/etc/nginx/sites-available/miniapps' do
 	_file = Chef::Util::FileEdit.new(path)
-	_file.search_file_replace('listen   443;', "listen   443 ssl spdy default_server;")
-	#11.12 content _file.send(:editor).lines.join
+	_file.search_file_replace(
+		"  location /nginx_status {",
+		<<EOS
+  location ~* \.(gif|jpg|jpeg|png|css|js)$ {
+    gzip_static on;
+    expires 20d;
+    add_header Cache-Control public;
+    add_header Last-Modified "";
+    add_header ETag "";
+    access_log off;
+  }
+  location /nginx_status  {
+EOS
+	)
 	content _file.send(:contents).join
 end
 
 #test
 #test
+
